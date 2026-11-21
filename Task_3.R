@@ -28,7 +28,7 @@ gene_df <- data.frame(
   classification = classification
 )
 gene_df[gene_df$chromosome == "17", ]
-gene_dflog2_fc <- log2(gene_dffold_change)
+gene_df$log2_fc <- log2(gene_df$fold_change)
 gene_df <- gene_df[order(gene_df$fold_change, decreasing = TRUE), ]
 write.csv(gene_df, "gene_df_sorted.csv", row.names = FALSE)
 png("expression_plot.png", width = 800, height = 600)
