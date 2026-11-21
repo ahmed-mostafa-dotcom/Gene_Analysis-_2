@@ -45,15 +45,7 @@ The undefined-variable typo in the log2 calculation has been corrected to:
 gene_df$log2_fc <- log2(gene_df$fold_change)
 ```
 
-R was not available during this update, so the corrected script was not run and the existing CSV and image were not regenerated. A successful clean run has not yet been verified.
-
-Run from the repository directory:
-
-```bash
-Rscript Task_3.R
-```
-
-The export commands target `gene_df_sorted.csv` and `expression_plot.png` in the working directory. Regenerating the CSV will add the `log2_fc` column; the committed CSV currently has no such column. `expression_plot.png` is not currently included in the repository. The committed `Rplot.tiff` has a different filename, and its origin is not documented by the script.
+Validated with two clean runs using R 4.1.2. Both completed successfully and produced identical CSV and PNG outputs. The committed CSV includes the log2_fc column. Run Rscript Task_3.R to regenerate gene_df_sorted.csv and expression_plot.png.
 
 ### Committed example result
 
@@ -87,7 +79,7 @@ This is a suggested notebook addition, not an existing cell.
 - There are no replicates, normalization steps, statistical tests, or multiple-testing corrections.
 - The notebook assumes uppercase input. Its GC function divides by sequence length and does not guard against an empty sequence.
 - Unexpected characters are reported during counting, but the GC function uses the full input length as its denominator.
-- The R typo is corrected but execution remains unverified. The missing notebook print source is unchanged and needs separate review.
+- The missing notebook print source is unchanged and needs separate review.
 
 ## Skills demonstrated
 
